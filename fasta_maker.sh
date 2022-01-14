@@ -89,5 +89,5 @@ done
 for C16 in ${i}/*COI*; do
     mv ${C16} ${i}/cOX1dir
 done
-
+rm ${i}/*.fasta
 done
