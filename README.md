@@ -14,8 +14,8 @@ Finally, this programm automatised the vast majority of datamining, but several 
 
 To work the masterscript need the user to have installated the following programms:
 
-  - ENTREZ DIRECT 
-  - muscle
+  - ENTREZ DIRECT `sh -c "$(curl -fsSL ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)" echo "export PATH=\$PATH:\$HOME/edirect" >> $HOME/.bash_profile`
+  - muscle (Edgar 2004)
   - Emboss
   - python3
   - iqtree2
@@ -102,8 +102,8 @@ Two master script are presented here:
   **run Second_step.sh**
   
   The second step is the alignement of our sequences, and the sorting of our sequence, which is by far the most time-consumming of all.
-  The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as Macse or Clustalw. In the future version of the script I will certainly be using Macse instead of muscle for coding sequence, since Macse is way more effective and keep the open reading frame intact. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length.
-  I recommend the use of Mesquite as an alignement editor, but even then some sequence will maybe need to be either modified or even removed from the dataset.
+  The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as Macse or Clustalw. In the future version of the script I will certainly be using Macse (Ranwez et al. 2011) instead of muscle for coding sequence, since Macse is way more effective and keep the open reading frame intact. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length.
+  I recommend the use of Mesquite (Maddison et al. 2016)  as an alignement editor, but even then some sequence will maybe need to be either modified or even removed from the dataset.
   At the end of the data cleaning you will be ready to run the last subscript.
   
   ### c) Last step : Phylogeny
@@ -121,3 +121,9 @@ Two master script are presented here:
  
   ### Reference
   
+  Edgar, R.C. MUSCLE: a multiple sequence alignment method with reduced time and space complexity. BMC Bioinformatics 5, 113 (2004). https://doi.org/10.1186/1471-2105-5-113
+  
+  
+  Ranwez V, Harispe S, Delsuc F, Douzery EJP (2011) MACSE: Multiple Alignment of Coding SEquences Accounting for Frameshifts and Stop Codons. PLoS ONE 6(9): e22594. doi:10.1371/journal.pone.0022594
+
+Maddison, D.R., T.J. Wheeler, and W.P. Maddison. 2016. Align: a Mesquite package for aligning sequence data. Version 1.8. http://www.mesquiteproject.org/Align.html
