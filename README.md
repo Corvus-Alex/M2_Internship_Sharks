@@ -8,20 +8,31 @@
 The purposes of the several script I intended to write were to give a fast and comprehensive way for mitogenomic datamining, and giving the user a fasta way to obtain a maximum likelyhood phylogeny.
 One must understand that this code only on UNIX system.
 Also this pipeline remain highly experimental so I understand that many uppgrade can be conducted.
-Finally, this programm automatised the vast majority of datamining, but several steps of check must be conducted unless you don't mind having a messy alignment and a messier phylogeny at the end.
+Finally, this programm automatised the vast majority of datamining, but several steps of check must be conducted unless you do not mind having a messy alignment and a messier phylogeny at the end.
 
 ## Prerequisite
 
 To work the masterscript need the user to have installated the following programms:
 
-  - ENTREZ DIRECT `sh -c "$(curl -fsSL ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)" echo "export PATH=\$PATH:\$HOME/edirect" >> $HOME/.bash_profile`
+  - Entrez Direct (Kans, 2013)
+   `sh -c "$(curl -fsSL ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)"` 
+   `echo "export PATH=\$PATH:\$HOME/edirect" >> $HOME/.bash_profile`
   - muscle (Edgar 2004)
-  - Emboss
+    `sudo apt-get install muscle`
+    
+  - Emboss (Rice etal. 2000)
+    `sudo apt-get install emboss`
   - python3
+    - module Bio
+    - module sys
+    `pip install Bio`
+    `pip install sys`
   - iqtree2
+    `sudo apt-get install iqtree`
   - seqkit
+    `sudo apt-get install seqkit`
  
-  *ONLY for MS2.sh*
+  **ONLY for MS2.sh**
   - Manually download one reference genome whose purpose is to adjust the size of the incomplete sequence, and put it into a newly created folder called "reference".
   
 ## Getting started
@@ -121,8 +132,11 @@ Two master script are presented here:
  
   ### Reference
   
+  Kans J. Entrez Direct: E-utilities on the Unix Command Line. 2013 Apr 23 [Updated 2022 Feb 14]. In: Entrez Programming Utilities Help [Internet]. Bethesda (MD): National Center for Biotechnology Information (US); 2010-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK179288/
+  
   Edgar, R.C. MUSCLE: a multiple sequence alignment method with reduced time and space complexity. BMC Bioinformatics 5, 113 (2004). https://doi.org/10.1186/1471-2105-5-113
   
+  Peter Rice, Ian Longden et Alan Bleasby, « EMBOSS: The European Molecular Biology Open Software Suite », Trends in Genetics, vol. 16, no 6, june 2000, p. 276-277 (PMID 10827456, DOI 10.1016/s0168-9525(00)02024-2)
   
   Ranwez V, Harispe S, Delsuc F, Douzery EJP (2011) MACSE: Multiple Alignment of Coding SEquences Accounting for Frameshifts and Stop Codons. PLoS ONE 6(9): e22594. doi:10.1371/journal.pone.0022594
 
