@@ -66,6 +66,9 @@ First the user must specify a species list into your current directory. The list
 ![list](https://user-images.githubusercontent.com/80922475/154270445-dcae2558-e269-41f4-9606-9e3aa8020da8.png)
 
 Two master script are presented here:
+
+## I Fast phylo
+
   The first one is the quickest of the two and lack many steps of checking but remain the best way to have a quick and dirty phylogeny.
   One must pay attention to the data availabilty, because the code will function only for species with refseq mitogenome.
   
@@ -77,3 +80,16 @@ Two master script are presented here:
     
 ![my_aligned_sequences fst contree-1](https://user-images.githubusercontent.com/80922475/154271031-c4d610b1-c47f-4391-af4b-2f9bb318f59c.png)
   
+## II Complete phylo
+  
+  The second script is by far the slowest of the two but is far more complex and can handle even incomplete data.
+  As such it is not a problem for the user to specify in the list even missing species, because the script will automaticaly remove them.
+  
+  ### a) First step : datamining, first cleaning and 
+  
+  To avoid most errors the second master script is in fact divided onto three subscript, here we examine the first one called "first_step.sh"
+  First the subscript will also download mitogenomic data for the specify species in the list, but will be not only restricted to refseq genome.
+  
+  Extanding the spectrum of available sequence will largely benefit our dataset since most of the sequence of genbank will be either non complete or non-refseq. 
+  
+  Then the script will
