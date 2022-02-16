@@ -97,6 +97,6 @@ Two master script are presented here:
   
   ### b) Second step : alignement
   
-    The second step is the alignement of our sequences, and the sorting of our sequence, which is by far the most time-consumming of all.
-    The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as Macse or Clustalw. In the future version of the script I will certainly be using Macse instead of muscle for coding sequence. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length. 
+  The second step is the alignement of our sequences, and the sorting of our sequence, which is by far the most time-consumming of all.
+  The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as Macse or Clustalw. In the future version of the script I will certainly be using Macse instead of muscle for coding sequence. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length. 
     
