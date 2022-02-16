@@ -15,21 +15,30 @@ Finally, this programm automatised the vast majority of datamining, but several 
 To work the masterscript need the user to have installated the following programms:
 
   - Entrez Direct (Kans, 2013)
+   
    `sh -c "$(curl -fsSL ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)"` 
    `echo "export PATH=\$PATH:\$HOME/edirect" >> $HOME/.bash_profile`
+   
   - muscle (Edgar 2004)
+    
     `sudo apt-get install muscle`
     
   - Emboss (Rice etal. 2000)
+    
     `sudo apt-get install emboss`
+    
   - python3
     - module Bio
-    - module sys
+    
     `pip install Bio`
+    - module sys
+    
     `pip install sys`
   - iqtree2
+    
     `sudo apt-get install iqtree`
   - seqkit
+    
     `sudo apt-get install seqkit`
  
   **ONLY for MS2.sh**
