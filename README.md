@@ -6,9 +6,9 @@
 ## Abstract
 
 The purposes of the several script I intended to write were to give a fast and comprehensive way for mitogenomic datamining, and giving the user a fasta way to obtain a maximum likelyhood phylogeny.
-One must understand that this only on UNIX system.
+One must understand that this code only on UNIX system.
 Also this pipeline remain highly experimental so I understand that many uppgrade can be conducted.
-Finally, this programm automatised the vast majority of datamining, but several steps of check must be conducted unless you don't mind having a messy alingment and a messier phylogeny at the end.
+Finally, this programm automatised the vast majority of datamining, but several steps of check must be conducted unless you don't mind having a messy alignment and a messier phylogeny at the end.
 
 ## Prerequisite
 
@@ -86,7 +86,8 @@ Two master script are presented here:
   
   ### a) First step : datamining, first cleaning and consensus
   
-  run **first_step.sh**
+  **run first_step.sh**
+  
   To avoid most errors the second master script is in fact divided onto three subscript, here we examine the first one called "first_step.sh"
   First the subscript will also download mitogenomic data for the specify species in the list, but will be not only restricted to refseq genome.
   
@@ -94,11 +95,12 @@ Two master script are presented here:
   
   Since multiple sequence will be downloaded for each specie, we will have to choose one among all of them, but can't really know *a priori* which one is the best. We then decided to make a consensus sequence (by calling em_cons) each time multiple sequence were available for the same gene in one specie. Nevertheless scarce error can happen when constituing consensus sequence. The default behavior of the script is to keep the largest sequence among the others as the "backup" sequence, and by doing so missing data (due to either bad consensus or bad alignement) will be replaced by the backup sequence.
   Also the script will easily complete sequence with missing data (typically barcode sequence) with N.
-  At the end of the script the name of the gene and specie  will be dispalyed into the terminal. Those names correspond to messy sequence, and need to be monitored manualy. In my experience the messy data are the one from either non-specified reverse complement in the genbank database or contaminated sequence from an other gene/or specie. The fastest way to get rid of this is to replace those problematic sequence by N placeholder generated from the reference directory, but the best way remain to manually complete these sequence by hand and/or to use their reverse-complement.
+  At the end of the script the name of the gene and specie  will be dispalyed into the terminal. Those names correspond to messy sequence, and need to be monitored manualy. In my experience the messy data are the one from either non-specified reverse complement in the genbank database or contaminated sequences from an other gene/or specie. The fastest way to get rid of this is to replace those problematic sequences by N placeholder generated from the reference directory, but the best way remain to manually complete these sequence by hand and/or to use their reverse-complement.
   
   ### b) Second step : alignement
   
-  run **Second_step.sh**
+  **run Second_step.sh**
+  
   The second step is the alignement of our sequences, and the sorting of our sequence, which is by far the most time-consumming of all.
   The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as Macse or Clustalw. In the future version of the script I will certainly be using Macse instead of muscle for coding sequence, since Macse is way more effective and keep the open reading frame intact. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length.
   I recommend the use of Mesquite as an alignement editor, but even then some sequence will maybe need to be either modified or even removed from the dataset.
@@ -106,9 +108,16 @@ Two master script are presented here:
   
   ### c) Last step : Phylogeny
   
-  run **Last_step**
+  **run Last_step**
+  
   Finally the last subscript is about the tree construction, and is by far the most customizable one. 
   As a tree maker we use the program IQtree, since its option are numerous.
   However, some missing data are still possible (unlikely) , and the user will have to manually remove the species with only missing data.
+  
   Many options are associated with Iqtree, and if the user want to make a more complete analyze, all the option are referenced in the user guide of Iqtree.
+  By doing so, you will have to modify the file **tree.sh** manualy at the last line, and replacing this line with your augumented version.
+ 
+ 
+ 
+  ### Reference
   
