@@ -28,36 +28,35 @@ To work the masterscript need the user to have installated the following program
 
 Along the instruction we are going to study two ways to obtain a phylogeny for the following specie dataset :
 
-Prionace glauca (Carcharhiniformes)
+*Prionace glauca* (Carcharhiniformes)
 
 ![Prionace](https://user-images.githubusercontent.com/80922475/154267036-ec7431e2-8021-46fb-9668-8e24ca5c331f.jpg)
 
-Carcharodon carcharias (Lamniformes)
+*Carcharodon carcharias* (Lamniformes)
 
 ![Carcharodon](https://user-images.githubusercontent.com/80922475/154267478-49627018-b02b-401c-8b64-7010e92991e7.jpeg)
 
-Rhincodon typus (Orectolobiformes)
+*Rhincodon typus* (Orectolobiformes)
 
 ![Rhincodon](https://user-images.githubusercontent.com/80922475/154267816-7afcf250-337e-42b5-8ec4-a3f7c1fbe372.jpeg)
 
-Squatina squatina (Squatiniformes)
+*Squatina squatina* (Squatiniformes)
 
 ![Squatina](https://user-images.githubusercontent.com/80922475/154269009-3d6a1333-5915-4579-8452-d76f1a2385eb.jpg)
 
-Hexanchus griseus (Hexanchiformes)
+*Hexanchus griseus* (Hexanchiformes)
 
 ![Hexanchus](https://user-images.githubusercontent.com/80922475/154269010-97493fde-35b2-41db-b5be-fdb152e8ea55.jpg)
 
-Squalus acanthias (Squaliformes)
+*Squalus acanthias* (Squaliformes)
 
 ![Squalus](https://user-images.githubusercontent.com/80922475/154268997-0bc01859-76ae-49d4-adc8-86e3e448b90b.jpg)
 
-
-Heterodontus zebra (Heterodontiformes)
+*Heterodontus zebra* (Heterodontiformes)
 
 ![Heterodontus](https://user-images.githubusercontent.com/80922475/154269004-fa41a2ae-d9fd-4f94-89f8-80692ffda38d.jpg)
 
-Pristiophorus japonicus (Pristiophoriformes)
+*Pristiophorus japonicus* (Pristiophoriformes)
 
 ![Pristiophorus](https://user-images.githubusercontent.com/80922475/154267653-33117072-f8c0-4748-bd18-8cf061fd1df5.jpg)
 
@@ -85,11 +84,19 @@ Two master script are presented here:
   The second script is by far the slowest of the two but is far more complex and can handle even incomplete data.
   As such it is not a problem for the user to specify in the list even missing species, because the script will automaticaly remove them.
   
-  ### a) First step : datamining, first cleaning and 
+  ### a) First step : datamining, first cleaning and consensus
   
   To avoid most errors the second master script is in fact divided onto three subscript, here we examine the first one called "first_step.sh"
   First the subscript will also download mitogenomic data for the specify species in the list, but will be not only restricted to refseq genome.
   
   Extanding the spectrum of available sequence will largely benefit our dataset since most of the sequence of genbank will be either non complete or non-refseq. 
   
-  Then the script will
+  Since multiple sequence will be downloaded for each specie, we will have to choose one among all of them, but can't really know *a priori* which one is the best. We then decided to make a consensus sequence (by calling em_cons) each time multiple sequence were available for the same gene in one specie. Nevertheless scarce error can happen when constituing consensus sequence. The default behavior of the script is to keep the largest sequence among the others as the "backup" sequence, and by doing so missing data (due to either bad consensus or bad alignement) will be replaced by the backup sequence.
+  Also the script will easily complete sequence with missing data (typically barcode sequence) with N.
+  At the end of the script the name of the gene and specie  will be dispalyed into the terminal. Those names correspond to messy sequence, and need to be monitored manualy. In my experience the messy data are the one from either non-specified reverse complement in the genbank database or contaminated sequence from an other gene/or specie. The fastest way to get rid of this is to replace those problematic sequence by N placeholder generated from the reference directory, but the best way remain to manually complete these sequence by hand and/or to use their reverse-complement.
+  
+  ### b) Second step : alignement
+  
+    The second step is the alignement of our sequences, and the sorting of our sequence, which is by far the most time-consumming of all.
+    The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as Macse or Clustalw. In the future version of the script I will certainly be using Macse instead of muscle for coding sequence. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length. 
+    
