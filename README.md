@@ -91,9 +91,10 @@ Two master script are presented here:
   The first one is the quickest of the two and lack many steps of checking but remain the best way to have a quick and dirty phylogeny.
   One must pay attention to the data availabilty, because the code will function only for species with refseq mitogenome.
   
-  To start the script, the user have just to run the following command line in the directory downloaded from this git : **bash QD.sh**
+  To start the script, the user have just to run the following command line in the directory downloaded from this git : `bash QD.sh`
+  Only this command is necessary and the user will have literally **nothing** to do. Running this analysis took me 5 minutes only.
   
-  At the you will find several file corresponding to the output of Iqtree, comprising a contree.file in the "last" folder, which is the consensus tree from the maximum likelyhood analysis.
+  At the end you will find several file corresponding to the output of Iqtree, comprising a contree.file in the "last" folder, which is the consensus tree from the maximum likelyhood analysis.
   
   I higly recomand the use of figtree as a tree visualizer for the consensus tree as seen in this example
     
@@ -103,10 +104,12 @@ Two master script are presented here:
   
   The second script is by far the slowest of the two but is far more complex and can handle even incomplete data.
   As such it is not a problem for the user to specify in the list even missing species, because the script will automaticaly remove them.
+  It remains possible to run all the command line in one go by typing `bash allin.sh`.
+  But I do not recommend this, since some errors can occur and remain at the end of the analysis, resulting in long branch onto the phylogeny.
   
   ### a) First step : datamining, first cleaning and consensus
   
-  **run first_step.sh**
+  `bash first_step.sh`
   
   To avoid most errors the second master script is in fact divided onto three subscript, here we examine the first one called "first_step.sh"
   First the subscript will also download mitogenomic data for the specify species in the list, but will be not only restricted to refseq genome.
@@ -115,11 +118,11 @@ Two master script are presented here:
   
   Since multiple sequence will be downloaded for each specie, we will have to choose one among all of them, but can't really know *a priori* which one is the best. We then decided to make a consensus sequence (by calling em_cons) each time multiple sequence were available for the same gene in one specie. Nevertheless scarce error can happen when constituing consensus sequence. The default behavior of the script is to keep the largest sequence among the others as the "backup" sequence, and by doing so missing data (due to either bad consensus or bad alignement) will be replaced by the backup sequence.
   Also the script will easily complete sequence with missing data (typically barcode sequence) with N.
-  At the end of the script the name of the gene and specie  will be dispalyed into the terminal. Those names correspond to messy sequence, and need to be monitored manualy. In my experience the messy data are the one from either non-specified reverse complement in the genbank database or contaminated sequences from an other gene/or specie. The fastest way to get rid of this is to replace those problematic sequences by N placeholder generated from the reference directory, but the best way remain to manually complete these sequence by hand and/or to use their reverse-complement.
+  At the end of the script some names of genes and species  will be dispalyed into the terminal. Those names correspond to messy sequence, and need to be monitored manualy. In my experience the messy data are the one from either non-specified reverse complement in the genbank database or contaminated sequences from an other gene/or specie. The fastest way to get rid of this is to replace those problematic sequences by N placeholder generated from the reference directory, but the best way remain to manually complete these sequence by hand and/or to use their reverse-complement.
   
   ### b) Second step : alignement
   
-  **run Second_step.sh**
+  `bash Second_step.sh`
   
   The second step is the alignement of our sequences, and the sorting of our sequence, which is by far the most time-consumming of all.
   The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as Macse or Clustalw. In the future version of the script I will certainly be using Macse (Ranwez et al. 2011) instead of muscle for coding sequence, since Macse is way more effective and keep the open reading frame intact. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length.
@@ -128,7 +131,7 @@ Two master script are presented here:
   
   ### c) Last step : Phylogeny
   
-  **run Last_step**
+  `bash Last_step`
   
   Finally the last subscript is about the tree construction, and is by far the most customizable one. 
   As a tree maker we use the program IQtree, since its option are numerous.
