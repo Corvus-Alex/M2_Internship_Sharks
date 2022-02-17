@@ -41,6 +41,9 @@ To work the masterscript need the user to have installated the following program
   - seqkit (Shen et al. 2016)
     
     `brew install seqkit`
+  - MACSE (Ranwez et al. 2011)
+
+    The code use MACSE version 2.06 "macse_v2.06.jar"
  
   **ONLY for MS2.sh**
   - Manually download one reference genome whose purpose is to adjust the size of the incomplete sequence, and put it into a newly created folder called **reference**. If you'll have to choose a reference genome, I higlhy recommend Refseq genome, from the ncbi.
@@ -110,9 +113,9 @@ Two master script are presented here:
   
   ### a) First step : datamining, first cleaning and consensus
   
-  `bash first_step.sh`
+  `bash First_step.sh`
   
-  To avoid most errors the second master script is in fact divided onto three subscript, here we examine the first one called **first_step.sh**.
+  To avoid most errors the second master script is in fact divided onto three subscript, here we examine the first one called **First_step.sh**.
   First the subscript will also download mitogenomic data for the specify species in the list, but will be not only restricted to refseq genome.
   
   Extanding the spectrum of available sequence will largely benefit our dataset since most of the sequence of genbank will be either non complete or non-refseq. 
@@ -126,7 +129,7 @@ Two master script are presented here:
   `bash Second_step.sh`
   
   The second step is the alignement of our sequences, and the sorting of our sequence, which is by far the most time-consumming of all.
-  The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as MACSE or Clustalw. In the future version of the script I will certainly be using MACSE (Ranwez et al. 2011) instead of muscle for coding sequence, since MACSE is way more effective and keep the open reading frame intact. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length.
+  The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as MACSE or Clustalw. In the future version of the script I will certainly be using MACSE for the final alignement instead of muscle for coding sequence, since MACSE is way more effective and keep the open reading frame intact. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length.
   I recommend the use of Mesquite (Maddison et al. 2016)  as an alignement editor, but even then some sequence will maybe need to be either modified or even removed from the dataset.
   At the end of the data cleaning you will be ready to run the last subscript.
   
@@ -141,7 +144,7 @@ Two master script are presented here:
   Many options are associated with IQ-TREE, and if the user want to make a more complete analyze, all the option are referenced in the user guide of Iqtree.
   By doing so, you will have to modify the file **tree.sh** manualy at the last line, and replacing this line with your augumented version.
  
- The complete run took me more than 1 hour but, in my opinion, is far more powerfull. Notabilly because incomplete sequence will remain still useful. As for a comparaison if I only took the first script to make my phylogeny, only 100 sequences will be available, on the opposite, with the second code, the phylogeny comprised more than 380 species, so almost 3 times more! (tested on 02/17/21)
+ The complete run took me more than 2 hours but, in my opinion, is far more powerfull. Notabilly because incomplete sequence will remain still useful. As for a comparaison if I only took the first script to make my phylogeny, only 100 sequences will be available, on the opposite, with the second code, the phylogeny comprised more than 380 species, so almost 3 times more! (tested on 02/17/21)
  
   ### Reference
   
