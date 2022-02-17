@@ -53,13 +53,13 @@ Along the instruction we are going to study two ways to obtain a phylogeny for t
 
 ![Prionace](https://user-images.githubusercontent.com/80922475/154267036-ec7431e2-8021-46fb-9668-8e24ca5c331f.jpg)
 
-*Carcharodon carcharias* (Lamniformes)
-
-![Carcharodon](https://user-images.githubusercontent.com/80922475/154267478-49627018-b02b-401c-8b64-7010e92991e7.jpeg)
-
 *Rhincodon typus* (Orectolobiformes)
 
 ![Rhincodon](https://user-images.githubusercontent.com/80922475/154267816-7afcf250-337e-42b5-8ec4-a3f7c1fbe372.jpeg)
+
+*Carcharodon carcharias* (Lamniformes)
+
+![Carcharodon](https://user-images.githubusercontent.com/80922475/154267478-49627018-b02b-401c-8b64-7010e92991e7.jpeg)
 
 *Squatina squatina* (Squatiniformes)
 
