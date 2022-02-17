@@ -35,7 +35,7 @@ To work the masterscript need the user to have installated the following program
     - module sys
     
     `pip install sys`
-  - iqtree2 (Minh et al. 2020)
+  - IQ-TREE (Minh et al. 2020)
     
     `sudo apt-get install iqtree2`
   - seqkit (Shen et al. 2016)
@@ -106,7 +106,7 @@ Two master script are presented here:
   The second script is by far the slowest of the two but is far more complex and can handle even incomplete data.
   As such it is not a problem for the user to specify in the list even missing species, because the script will automaticaly remove them.
   It remains possible to run all the command line in one go by typing `bash allin.sh`.
-  But I do not recommend this, since some errors can occur and remain at the end of the analysis, resulting in long branch onto the phylogeny.
+  But I do not recommend this, since some errors can occur and remain at the end of the analysis, resulting in long branch into the phylogeny.
   
   ### a) First step : datamining, first cleaning and consensus
   
@@ -126,7 +126,7 @@ Two master script are presented here:
   `bash Second_step.sh`
   
   The second step is the alignement of our sequences, and the sorting of our sequence, which is by far the most time-consumming of all.
-  The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as Macse or Clustalw. In the future version of the script I will certainly be using Macse (Ranwez et al. 2011) instead of muscle for coding sequence, since Macse is way more effective and keep the open reading frame intact. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length.
+  The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as MACSE or Clustalw. In the future version of the script I will certainly be using MACSE (Ranwez et al. 2011) instead of muscle for coding sequence, since MACSE is way more effective and keep the open reading frame intact. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length.
   I recommend the use of Mesquite (Maddison et al. 2016)  as an alignement editor, but even then some sequence will maybe need to be either modified or even removed from the dataset.
   At the end of the data cleaning you will be ready to run the last subscript.
   
@@ -135,13 +135,13 @@ Two master script are presented here:
   `bash Last_step.sh`
   
   Finally the last subscript is about the tree construction, and is by far the most customizable one. 
-  As a tree maker we use the program IQtree, since its option are numerous.
+  As a tree maker we use the program IQ-TREE, since its option are numerous.
   However, some missing data are still possible (unlikely) , and the user will have to manually remove the species with only missing data.
   
-  Many options are associated with Iqtree, and if the user want to make a more complete analyze, all the option are referenced in the user guide of Iqtree.
+  Many options are associated with IQ-TREE, and if the user want to make a more complete analyze, all the option are referenced in the user guide of Iqtree.
   By doing so, you will have to modify the file **tree.sh** manualy at the last line, and replacing this line with your augumented version.
  
- 
+ The complete run took me more than 1 hour but, in my opinion, is far more powerfull. Notabilly because incomplete sequence will remain still useful. As for a comparaison if I only took the first script to make my phylogeny, only 100 sequences will be available, on the opposite, with the second code, the phylogeny comprised more than 380 species, so almost 3 times more! (tested on 02/17/21)
  
   ### Reference
   
