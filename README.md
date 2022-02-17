@@ -5,7 +5,7 @@
 
 ## Abstract
 
-The purposes of the several script I intended to write were to give a fast and comprehensive way for mitogenomic datamining, and giving the user a fasta way to obtain a maximum likelyhood phylogeny.
+The purposes of the several script I intended to write were to give a fast and comprehensive way for  **any** mitogenomic datamining, and giving the user a fast way to obtain a maximum likelyhood phylogeny.
 One must understand that this code only on UNIX system.
 Also this pipeline remain highly experimental so I understand that many uppgrade can be conducted.
 Finally, this programm automatised the vast majority of datamining, but several steps of check must be conducted unless you do not mind having a messy alignment and a messier phylogeny at the end.
@@ -28,21 +28,21 @@ To work the masterscript need the user to have installated the following program
     `sudo apt-get install emboss`
     
   - python3
-    - module Bio
+    - module Bio (Cock et al. 2009)
     
     `pip install Bio`
     - module sys
     
     `pip install sys`
-  - iqtree2
+  - iqtree2 (Minh et al. 2020)
     
-    `sudo apt-get install iqtree`
-  - seqkit
+    `sudo apt-get install iqtree2`
+  - seqkit (Shen et al. 2016)
     
-    `sudo apt-get install seqkit`
+    `brew install seqkit`
  
   **ONLY for MS2.sh**
-  - Manually download one reference genome whose purpose is to adjust the size of the incomplete sequence, and put it into a newly created folder called "reference".
+  - Manually download one reference genome whose purpose is to adjust the size of the incomplete sequence, and put it into a newly created folder called **reference**. If you'll have to choose a reference genome, I higlhy recommend Refseq genome, from the ncbi.
   
 ## Getting started
 
@@ -131,7 +131,7 @@ Two master script are presented here:
   
   ### c) Last step : Phylogeny
   
-  `bash Last_step`
+  `bash Last_step.sh`
   
   Finally the last subscript is about the tree construction, and is by far the most customizable one. 
   As a tree maker we use the program IQtree, since its option are numerous.
@@ -149,6 +149,12 @@ Two master script are presented here:
   Edgar, R.C. MUSCLE: a multiple sequence alignment method with reduced time and space complexity. BMC Bioinformatics 5, 113 (2004). https://doi.org/10.1186/1471-2105-5-113
   
   Peter Rice, Ian Longden et Alan Bleasby, « EMBOSS: The European Molecular Biology Open Software Suite », Trends in Genetics, vol. 16, no 6, june 2000, p. 276-277 (PMID 10827456, DOI 10.1016/s0168-9525(00)02024-2)
+  
+  Cock, P.J. et al., 2009. Biopython: freely available Python tools for computational molecular biology and bioinformatics. Bioinformatics, 25(11), pp. 1422–1423
+  
+  B.Q. Minh, H.A. Schmidt, O. Chernomor, D. Schrempf, M.D. Woodhams, A. von Haeseler, R. Lanfear (2020) IQ-TREE 2: New models and efficient methods for phylogenetic inference in the genomic era. Mol. Biol. Evol., 37:1530-1534. https://doi.org/10.1093/molbev/msaa015
+  
+  W Shen, S Le, Y Li*, F Hu*. SeqKit: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation. PLOS ONE. doi:10.1371/journal.pone.0163962.
   
   Ranwez V, Harispe S, Delsuc F, Douzery EJP (2011) MACSE: Multiple Alignment of Coding SEquences Accounting for Frameshifts and Stop Codons. PLoS ONE 6(9): e22594. doi:10.1371/journal.pone.0022594
 
