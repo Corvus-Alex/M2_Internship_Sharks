@@ -17,13 +17,14 @@ To work the masterscript need the user to have installated the following program
   - Entrez Direct (Kans, 2013)
    
    `sh -c "$(curl -fsSL ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)"` 
+   
    `echo "export PATH=\$PATH:\$HOME/edirect" >> $HOME/.bash_profile`
    
-  - muscle (Edgar 2004)
+  - muscle (Edgar, 2004)
     
     `sudo apt-get install muscle`
     
-  - Emboss (Rice etal. 2000)
+  - Emboss (Rice et al. 2000)
     
     `sudo apt-get install emboss`
     
@@ -111,13 +112,13 @@ Two master script are presented here:
   
   `bash first_step.sh`
   
-  To avoid most errors the second master script is in fact divided onto three subscript, here we examine the first one called "first_step.sh"
+  To avoid most errors the second master script is in fact divided onto three subscript, here we examine the first one called **first_step.sh**.
   First the subscript will also download mitogenomic data for the specify species in the list, but will be not only restricted to refseq genome.
   
   Extanding the spectrum of available sequence will largely benefit our dataset since most of the sequence of genbank will be either non complete or non-refseq. 
   
-  Since multiple sequence will be downloaded for each specie, we will have to choose one among all of them, but can't really know *a priori* which one is the best. We then decided to make a consensus sequence (by calling em_cons) each time multiple sequence were available for the same gene in one specie. Nevertheless scarce error can happen when constituing consensus sequence. The default behavior of the script is to keep the largest sequence among the others as the "backup" sequence, and by doing so missing data (due to either bad consensus or bad alignement) will be replaced by the backup sequence.
-  Also the script will easily complete sequence with missing data (typically barcode sequence) with N.
+  Since multiple sequence will be downloaded for each specie, we will have to choose one among all of them, but can't really know *a priori* which one is the best. We then decided to make a consensus sequence (by calling em_cons) each time multiple sequence were available for the same gene in one specie. Nevertheless scarce error can happen when constituing consensus sequence. The default behavior of the script is to keep the largest sequence among the others as the "backup" sequence, and by doing so, missing data (due to either bad consensus or bad alignement) will be replaced by the backup sequence.
+  Also the script will easily incomplete sequence (typically barcode sequence) with N.
   At the end of the script some names of genes and species  will be dispalyed into the terminal. Those names correspond to messy sequence, and need to be monitored manualy. In my experience the messy data are the one from either non-specified reverse complement in the genbank database or contaminated sequences from an other gene/or specie. The fastest way to get rid of this is to replace those problematic sequences by N placeholder generated from the reference directory, but the best way remain to manually complete these sequence by hand and/or to use their reverse-complement.
   
   ### b) Second step : alignement
