@@ -6,7 +6,7 @@
 ## Abstract
 
 The purposes of the several script I intended to write were to give a fast and comprehensive way for  **any** mitogenomic datamining, and giving the user a fast way to obtain a maximum likelyhood phylogeny.
-One must understand that this code only on UNIX system.
+One must understand that this code **only** on linux system, and need several minor modification to work properly on MAC OS.
 Also this pipeline remain highly experimental so I understand that many uppgrade can be conducted.
 Finally, this programm automatised the vast majority of datamining, but several steps of check must be conducted unless you do not mind having a messy alignment and a messier phylogeny at the end.
 
