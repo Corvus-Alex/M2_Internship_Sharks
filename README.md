@@ -148,18 +148,18 @@ Two master script are presented here:
  
   ### Reference
   
-  Kans J. Entrez Direct: E-utilities on the Unix Command Line. 2013 Apr 23 [Updated 2022 Feb 14]. In: Entrez Programming Utilities Help [Internet]. Bethesda (MD): National Center for Biotechnology Information (US); 2010-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK179288/
-  
-  Edgar, R.C. MUSCLE: a multiple sequence alignment method with reduced time and space complexity. BMC Bioinformatics 5, 113 (2004). https://doi.org/10.1186/1471-2105-5-113
-  
-  Peter Rice, Ian Longden et Alan Bleasby, « EMBOSS: The European Molecular Biology Open Software Suite », Trends in Genetics, vol. 16, no 6, june 2000, p. 276-277 (PMID 10827456, DOI 10.1016/s0168-9525(00)02024-2)
-  
-  Cock, P.J. et al., 2009. Biopython: freely available Python tools for computational molecular biology and bioinformatics. Bioinformatics, 25(11), pp. 1422–1423
-  
-  B.Q. Minh, H.A. Schmidt, O. Chernomor, D. Schrempf, M.D. Woodhams, A. von Haeseler, R. Lanfear (2020) IQ-TREE 2: New models and efficient methods for phylogenetic inference in the genomic era. Mol. Biol. Evol., 37:1530-1534. https://doi.org/10.1093/molbev/msaa015
-  
-  W Shen, S Le, Y Li*, F Hu*. SeqKit: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation. PLOS ONE. doi:10.1371/journal.pone.0163962.
-  
-  Ranwez V, Harispe S, Delsuc F, Douzery EJP (2011) MACSE: Multiple Alignment of Coding SEquences Accounting for Frameshifts and Stop Codons. PLoS ONE 6(9): e22594. doi:10.1371/journal.pone.0022594
+  Kans, J. 2022. Entrez direct: E-utilities on the UNIX command line. In *Entrez Programming Utilities Help [Internet]*. National Center for Biotechnology Information (US).  
 
-Maddison, D.R., T.J. Wheeler, and W.P. Maddison. 2016. Align: a Mesquite package for aligning sequence data. Version 1.8. http://www.mesquiteproject.org/Align.html
+  Edgar, R.C. 2004. MUSCLE: a multiple sequence alignment method with reduced time and space complexity. *BMC Bioinformatics*. 5:113 https://doi.org/10.1186/1471-2105-5-113
+  
+  Rice, P. Longden, I. Bleasby, A. 2000. « EMBOSS: The European Molecular Biology Open Software Suite ». *Trends in Genetics*. 16(6):276-277 (PMID 10827456, DOI 10.1016/s0168-9525(00)02024-2)
+  
+  Cock, P. J. Antao, T. Chang, J. T. Chapman, B. A. Cox, C. J. Dalke, A. De Hoon, M. J. 2009. Biopython: freely available Python tools for computational molecular biology and bioinformatics. *Bioinformatics*. 25(11):1422-1423.
+  
+Minh, B. Q. Schmidt, H. A. Chernomor, O. Schrempf, D. Woodhams, M. D. von Haeseler, A. Lanfear, R. 2020. IQ-TREE 2: New Models and Efficient Methods for Phylogenetic Inference in the Genomic Era. *Molecular biology and evolution*. 37(5):1530–1534. https://doi.org/10.1093/molbev/msaa015  
+
+Shen, W. Le, S. Li, Y. Hu, F. SeqKit: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation. *PloS one*. 11(10). doi:10.1371/journal.pone.0163962.
+  
+  Ranwez, V. Harispe, S. Delsuc, F. Douzery, E.J.P. 2011. MACSE: Multiple Alignment of Coding SEquences Accounting for Frameshifts and Stop Codons. *PLoS ONE*. 6(9). doi:10.1371/journal.pone.0022594
+
+Maddison, D.R. Wheeler, T.J. Maddison, W.P 2016. Align: a Mesquite package for aligning sequence data. Version 1.8. http://www.mesquiteproject.org/Align.html
