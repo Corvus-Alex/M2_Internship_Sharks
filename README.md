@@ -144,7 +144,7 @@ Two master script are presented here:
   Many options are associated with IQ-TREE, and if the user want to make a more complete analyze, all the option are referenced in the user guide of Iqtree.
   By doing so, you will have to modify the file **tree.sh** manualy at the last line, and replacing this line with your augumented version.
  
- The complete run took me more than 2 hours but, in my opinion, is far more powerfull. Mostly because incomplete sequence will remain still useful. As for a comparaison if I only took the first script to make my phylogeny, only 100 sequences will be available, on the opposite, with the second code, the phylogeny comprised more than 380 species, so almost 3 times more! (tested on 02/17/21)
+ The complete run took me more than 2 hours but, in my opinion, is far more powerfull. Mostly because incomplete sequence will remain still useful. As for a comparaison if I only took the first script to make my Selachii phylogeny, only 100 sequences will be available, on the opposite, with the second code, the phylogeny comprised more than 380 species, so almost 3 times more! (tested on 02/17/21)
  
  **Here** you can see a complete phylogeny using 382 Selachii species, using this script and a custom IQ-TREE command line. The complete run took me almost a day (not accounting the alignement cleaning job), but the result is still worth it:
 
