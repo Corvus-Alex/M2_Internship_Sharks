@@ -121,7 +121,7 @@ Two master script are presented here:
   Extanding the spectrum of available sequence will largely benefit our dataset since most of the sequence of genbank will be either non complete or non-refseq. 
   
   Since multiple sequence will be downloaded for each specie, we will have to choose one among all of them, but can't really know *a priori* which one is the best. We then decided to make a consensus sequence (by calling em_cons) each time multiple sequence were available for the same gene in one specie. Nevertheless scarce error can happen when constituing consensus sequence. The default behavior of the script is to keep the largest sequence among the others as the "backup" sequence, and by doing so, missing data (due to either bad consensus or bad alignement) will be replaced by the backup sequence.
-  Also the script will easily incomplete sequence (typically barcode sequence) with N.
+  Also the script will easily complete data-deficient sequence (typically barcode sequence) with N.
   At the end of the script some names of genes and species  will be dispalyed into the terminal. Those names correspond to messy sequence, and need to be monitored manualy. In my experience the messy data are the one from either non-specified reverse complement in the genbank database or contaminated sequences from an other gene/or specie. The fastest way to get rid of this is to replace those problematic sequences by N placeholder generated from the reference directory, but the best way remain to manually complete these sequence by hand and/or to use their reverse-complement.
   
   ### b) Second step : alignement
@@ -129,7 +129,7 @@ Two master script are presented here:
   `bash Second_step.sh`
   
   The second step is the alignement of our sequences, and the sorting of our sequence, which is by far the most time-consumming of all.
-  The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as MACSE or Clustalw. In the future version of the script I will certainly be using MACSE for the final alignement instead of muscle for coding sequence, since MACSE is way more effective and keep the open reading frame intact. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length.
+  The script will automatically align all the sequence by gene. The programm called here is muscle, but several other alignement programm exist, such as MACSE or Clustalw. In the future version of the script I will certainly be using MACSE for the **final alignement** instead of muscle for coding sequence, since MACSE is way more effective and keep the open reading frame intact. Even if this process is stil automatized one must check by hand the quality of the alignement. Indeed a messy alignement will result into a phylogeny with abnormally large branch length.
   I recommend the use of Mesquite (Maddison et al. 2016)  as an alignement editor, but even then some sequence will maybe need to be either modified or even removed from the dataset.
   At the end of the data cleaning you will be ready to run the last subscript.
   
@@ -146,6 +146,10 @@ Two master script are presented here:
  
  The complete run took me more than 2 hours but, in my opinion, is far more powerfull. Mostly because incomplete sequence will remain still useful. As for a comparaison if I only took the first script to make my phylogeny, only 100 sequences will be available, on the opposite, with the second code, the phylogeny comprised more than 380 species, so almost 3 times more! (tested on 02/17/21)
  
+ **Here** you can see a complete phylogeny using 382 Selachii species, using this script. the complete run took me almost a day (not accounting the alignement cleaning job), but the result is still worth it
+
+![Final_tree](https://user-images.githubusercontent.com/80922475/154461800-1953fded-a675-4f44-a9b7-3078d2653cbe.jpg)
+
   ### Reference
   
   Kans, J. 2022. Entrez direct: E-utilities on the UNIX command line. In *Entrez Programming Utilities Help [Internet]*. National Center for Biotechnology Information (US).  
