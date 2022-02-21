@@ -146,7 +146,7 @@ Two master script are presented here:
  
  The complete run took me more than 2 hours but, in my opinion, is far more powerfull. Mostly because incomplete sequence will remain still useful. As for a comparaison if I only took the first script to make my phylogeny, only 100 sequences will be available, on the opposite, with the second code, the phylogeny comprised more than 380 species, so almost 3 times more! (tested on 02/17/21)
  
- **Here** you can see a complete phylogeny using 382 Selachii species, using this script. the complete run took me almost a day (not accounting the alignement cleaning job), but the result is still worth it
+ **Here** you can see a complete phylogeny using 382 Selachii species, using this script and a custom IQ-TREE command line. The complete run took me almost a day (not accounting the alignement cleaning job), but the result is still worth it:
 
 ![Final_tree](https://user-images.githubusercontent.com/80922475/154461800-1953fded-a675-4f44-a9b7-3078d2653cbe.jpg)
 
