@@ -139,7 +139,7 @@ Two master script are presented here:
   
   Finally the last subscript is about the tree construction, and is by far the most customizable one. 
   As a tree maker we use the program IQ-TREE, since its option are numerous.
-  However, some missing data are still possible (unlikely) , and the user will have to manually remove the species with only missing data.
+  However, some missing data are still possible (unlikely), and the user will have to manually remove the species with only missing data.
   
   Many options are associated with IQ-TREE, and if the user want to make a more complete analyze, all the option are referenced in the user guide of Iqtree.
   By doing so, you will have to modify the file **tree.sh** manualy at the last line, and replacing this line with your augumented version.
