@@ -110,6 +110,7 @@ Two master script are presented here:
   As such it is not a problem for the user to specify in the list even missing species, because the script will automaticaly remove them.
   It remains possible to run all the command line in one go by typing `bash allin.sh`.
   But I do not recommend this, since some errors can occur and remain at the end of the analysis, resulting in long branch into the phylogeny.
+  To work properly, the user must create a folder called `reference`, and put in it a .genbank complete mitogenome of a well described specie of the taxonomic group.
   
   ### a) First step : datamining, first cleaning and consensus
   
