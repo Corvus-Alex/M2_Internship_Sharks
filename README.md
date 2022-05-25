@@ -149,7 +149,8 @@ Two master script are presented here:
  
  **Here** you can see a complete phylogeny using 382 Selachii species, using this script and a custom IQ-TREE command line. The complete run took me almost a day (not accounting the alignement cleaning job), but the result is still worth it:
 
-![Final_tree](https://user-images.githubusercontent.com/80922475/154461800-1953fded-a675-4f44-a9b7-3078d2653cbe.jpg)
+![Final_tree1](https://github.com/Corvus-Alex/M2_Internship_Sharks/files/8768455/Figure.4a.-.Phylogenie.des.requins.pdf)
+![Final_tree2](https://github.com/Corvus-Alex/M2_Internship_Sharks/files/8768457/Figure.4b.-.Phylogenie.des.requins.pdf)
 
   ### Reference
   
